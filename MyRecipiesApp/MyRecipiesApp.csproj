@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Fonts\Quicksand-Bold.ttf" />
 	  <None Remove="Resources\Fonts\Quicksand-Light.ttf" />
 	  <None Remove="Resources\Fonts\Quicksand-Regular.ttf" />
+	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\burger.png" />
 	  <None Remove="Resources\Images\cinnamon_roll.png" />
 	  <None Remove="Resources\Images\mojito.png" />

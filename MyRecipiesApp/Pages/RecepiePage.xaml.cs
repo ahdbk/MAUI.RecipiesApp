@@ -11,10 +11,7 @@ namespace MyRecipiesApp.Pages
         public RecepiePage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, true);
-            var navigationPage = Application.Current.MainPage as NavigationPage;
-            navigationPage.BarBackgroundColor = Colors.White;
-            navigationPage.BarTextColor = Colors.Black;
+            NavigationPage.SetHasNavigationBar(this, false);
 
             this.BindingContext =  new Recepie() {
                 Title = "Spagetti Pesto",
@@ -25,6 +22,11 @@ namespace MyRecipiesApp.Pages
                 Ingredients = (new List<string> { "500 ml Milk", "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" }).AsEnumerable<string>(),
                 Rating = 3.0
             };
+        }
+
+        public async void OnTappedGoBack(object sender, EventArgs args)
+        {
+            await Navigation.PopAsync();
         }
     }
 }
