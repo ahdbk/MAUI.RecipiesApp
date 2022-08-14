@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+              xmlns:local="clr-namespace:MyRecipiesApp"             
+             x:Class="MyRecipiesApp.Controls.RecepieBadge">
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+        NumberOfTapsRequired="1"
+        Tapped="OnTapped">
+        </TapGestureRecognizer>
+    </ContentView.GestureRecognizers>
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Metropolis Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+
+
+            </Style>
+            <Style x:Key="SubTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="TextColor" Value="Grey" />
+                <Setter Property="FontFamily" Value="Metropolis Bold" />
+
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid Margin="0,60,0,0">
+
+        <BoxView HorizontalOptions="Start"
+            Background="Transparent"
+            Color="{Binding Color}"
+            WidthRequest="250" 
+            HeightRequest="170" 
+            CornerRadius="35">
+        </BoxView>
+        <Image  Source="{Binding Image}"
+                HeightRequest="160"
+                Margin="10,-135,-40,0"
+                HorizontalOptions="Center">
+        <Image.Shadow>
+            <Shadow Brush="Black"
+                Offset="10,15"
+                Radius="30"
+                Opacity="0.4" />
+        </Image.Shadow>
+        </Image>
+
+        <Grid RowDefinitions="Auto" Margin="20,100,0,0" HorizontalOptions="Start">
+            <StackLayout Orientation="Vertical">
+                <Label Style="{StaticResource TitleStyle}" Text="{Binding Title}"></Label>
+                <Label Style="{StaticResource SubTitleStyle}" Text="{Binding SubTitle}"></Label>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

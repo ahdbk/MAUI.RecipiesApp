@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:MyRecipiesApp.Controls"
+              xmlns:view="clr-namespace:MyRecipiesApp.Views"
+             x:Class="MyRecipiesApp.Pages.HomePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="AntipastoMedium" />
+            </Style>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontFamily" Value="AntipastoMedium" />
+
+            </Style>
+
+            <Style x:Key="RadioMenu" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="AntipastoDemibold" />
+            </Style>
+
+            <Style x:Key="RowTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontFamily" Value="AntipastoDemibold" />
+                <Setter Property="Margin" Value="25,10,10,20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            <StackLayout Orientation="Vertical">
+                <Grid RowDefinitions="Auto, *">
+                    <StackLayout Orientation="Horizontal"  Margin="30,30,0,20">
+                        <Label Style="{StaticResource TitleStyle}">Homemade</Label>
+                        <Label Style="{StaticResource TitleStyle}" FontAttributes="Bold" Margin="4, 0, 0, 0">Food</Label>
+                    </StackLayout>
+                </Grid>
+
+                <Grid RowDefinitions="Auto, *" Margin="30,0,0,0">
+                    <view:CategorieMenu></view:CategorieMenu>
+                </Grid>
+                <Grid Margin="0,30,0,0">
+                    <CarouselView ItemsSource="{ Binding Recepies}" 
+                              PeekAreaInsets="60"          
+                              Loop="False">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:RecepieBadge/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+                <StackLayout Margin="0,30,0,0">
+                    <Label Style="{StaticResource RowTitle}">Popular this week</Label>
+                    <CarouselView ItemsSource="{ Binding PopularRecepies}"
+                              PeekAreaInsets="60"              
+                              Loop="False">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:RecepieBadge />
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

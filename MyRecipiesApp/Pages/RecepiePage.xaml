@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyRecipiesApp"             
+             xmlns:model="clr-namespace:MyRecipiesApp.ViewModel"             
+             xmlns:controls="clr-namespace:MyRecipiesApp.Controls"             
+             x:DataType="model:Recepie"
+             x:Class="MyRecipiesApp.Pages.RecepiePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="RecepieTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="FontFamily" Value="AntipastoMedium" />
+            </Style>
+            <Style x:Key="RecepieDescription" TargetType="Label">
+                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,10,0,10" />
+                <Setter Property="LineHeight" Value="1.5" />
+            </Style>
+            <Style x:Key="RecepieRating" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="Gray" />
+
+            </Style>
+            <Style x:Key="RecepieImage" TargetType="Image">
+                <Setter Property="Margin" Value="150,-150,0,0" />
+                <Setter Property="WidthRequest" Value="350" />
+            </Style>
+            <Style x:Key="RecepieIngredientsTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="23" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontFamily" Value="AntipastoMedium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <AbsoluteLayout HorizontalOptions="Start">
+            <Image Source="{Binding Image}" Style="{StaticResource RecepieImage}"/>
+            <StackLayout Orientation="Vertical" Padding="25,200,25,0" Spacing="12">
+                <Label Text="{Binding Title}" Style="{StaticResource RecepieTitle}"></Label>
+
+                <StackLayout Orientation="Horizontal">
+                    <controls:SimpleRatingControl Amount="5"
+                                      CurrentValue="{Binding Rating}"
+                                      AccentColor="Gray"
+                                      StarSize="20" />
+                    <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                        <Label Text="{Binding Rating}" Style="{StaticResource RecepieRating}"></Label>
+                        <Label Text="/5.0" Style="{StaticResource RecepieRating}"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <Rectangle Fill="gray" HeightRequest="2" WidthRequest="350" Opacity="0.1"></Rectangle>
+                <Label Text="{Binding Description}" Style="{StaticResource RecepieDescription}" ></Label>
+                <Rectangle Fill="gray" HeightRequest="2" WidthRequest="350" Opacity="0.1"></Rectangle>
+                <Label Text="Ingredients" Style="{StaticResource RecepieIngredientsTitle}"></Label>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

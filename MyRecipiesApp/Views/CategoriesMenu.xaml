@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             xmlns:local="clr-namespace:MyRecipiesApp"             
+             x:Class="MyRecipiesApp.Views.CategoriesMenu">
+    <ContentView.Resources>
+
+        <ControlTemplate x:Key="ThemeRadioTemplate">
+            <Grid RowDefinitions="Auto">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <!--<Setter Property="BackgroundColor" Value="#df6e57" />-->
+
+                                    <!--<Setter TargetName="selected" Property="BackgroundColor" Value="#df6e57" />-->
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <!--<Setter TargetName="selected" Property="BackgroundColor" Value="Transparent" />-->
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <ContentPresenter x:Name="CP"  />
+                <Rectangle x:Name="selected" HeightRequest="2" BackgroundColor="Black" Margin="1, 20, 0, 0"></Rectangle>
+
+            </Grid>
+        </ControlTemplate>
+
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" Spacing="20">
+            <RadioButton Value="0" IsChecked="True" ControlTemplate="{StaticResource ThemeRadioTemplate}">
+                <RadioButton.Content>
+                    Meal
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton Value="1" ControlTemplate="{StaticResource ThemeRadioTemplate}">
+                <RadioButton.Content>
+                    <Label>Salad</Label>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton Value="2" ControlTemplate="{StaticResource ThemeRadioTemplate}">
+                <RadioButton.Content>
+                    Cocktail
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton Value="3" ControlTemplate="{StaticResource ThemeRadioTemplate}">
+                <RadioButton.Content>
+                    Desert
+                </RadioButton.Content>
+            </RadioButton>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
