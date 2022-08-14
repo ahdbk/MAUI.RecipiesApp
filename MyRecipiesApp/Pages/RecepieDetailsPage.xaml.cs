@@ -1,5 +1,7 @@
-﻿using MyRecipiesApp.ViewModel;
+﻿using MyRecipiesApp.Models;
+using MyRecipiesApp.ViewModel;
 using System.Collections.ObjectModel;
+using static MyRecipiesApp.Common.RecipesViewModel;
 using static MyRecipiesApp.Pages.HomePage;
 
 namespace MyRecipiesApp.Pages
@@ -13,15 +15,7 @@ namespace MyRecipiesApp.Pages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            this.BindingContext =  new Recepie() {
-                Title = "Spagetti Pesto",
-                SubTitle = "Qualita !!!",
-                Image = "pasta_pesto.png",
-                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel orci nisi. Aliquam turpis tellus, pretium placerat varius condimentum, imperdiet sit amet tellus. Nulla vel lacus leo.",
-                Color = ColorPalet.Blue,
-                Ingredients = (new List<string> { "500 ml Milk", "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" , "500 ml Milk" }).AsEnumerable<string>(),
-                Rating = 3.0
-            };
+            this.BindingContext = this;
         }
 
         public async void OnTappedGoBack(object sender, EventArgs args)

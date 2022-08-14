@@ -1,4 +1,4 @@
-﻿namespace MyRecipiesApp.Services
+﻿namespace MyRecipiesApp.Models
 {
     internal class RecipeCategory
     {

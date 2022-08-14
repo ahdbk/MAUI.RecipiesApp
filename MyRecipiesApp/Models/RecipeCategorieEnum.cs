@@ -1,4 +1,4 @@
-﻿namespace MyRecipiesApp.Services
+﻿namespace MyRecipiesApp.Models
 {
     public enum RecipeCategoryEnum
     {

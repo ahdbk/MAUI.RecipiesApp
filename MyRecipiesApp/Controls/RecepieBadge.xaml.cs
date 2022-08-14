@@ -1,5 +1,5 @@
+using MyRecipiesApp.Models;
 using MyRecipiesApp.Pages;
-using MyRecipiesApp.ViewModel;
 using static MyRecipiesApp.Pages.HomePage;
 
 namespace MyRecipiesApp.Controls;

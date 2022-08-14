@@ -1,4 +1,4 @@
-﻿namespace MyRecipiesApp.ViewModel
+﻿namespace MyRecipiesApp.Models
 {
     public class Recepie
     {
