@@ -49,10 +49,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="Views\CategoriesMenu.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Fonts\antipasto.demibold.ttf" />
 	  <None Remove="Resources\Fonts\antipasto.medium.ttf" />
 	  <None Remove="Resources\Fonts\antipasto.regular.ttf" />
@@ -79,16 +75,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\RecepieDetailsPage.xaml.cs">
+	    <DependentUpon>RecepieDetailsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Controls\RecepieBadge.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\RecepiePage.xaml">
+	  <MauiXaml Update="Pages\RecepieDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CategorieMenu.xaml">
+	  <MauiXaml Update="Controls\CategorieMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

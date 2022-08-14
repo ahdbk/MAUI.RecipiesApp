@@ -1,4 +1,4 @@
-namespace MyRecipiesApp.Views;
+namespace MyRecipiesApp.Controls;
 
 public partial class CategorieMenu : ContentView
 {
