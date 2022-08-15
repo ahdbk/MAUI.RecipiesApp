@@ -14,6 +14,7 @@ namespace MyRecipiesApp.Pages
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            Application.Current.UserAppTheme = AppTheme.Light;
 
             this.BindingContext = this;
         }

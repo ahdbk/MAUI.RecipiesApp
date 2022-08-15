@@ -11,22 +11,18 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
             </Style>
             <Style x:Key="TitleStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="30" />
-                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
 
-            </Style>
-
-            <Style x:Key="RadioMenu" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
-                <Setter Property="FontFamily" Value="AntipastoDemibold" />
             </Style>
 
             <Style x:Key="RowTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="20" />
-                <Setter Property="FontFamily" Value="AntipastoDemibold" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Margin" Value="25,10,10,20" />
             </Style>
         </ResourceDictionary>

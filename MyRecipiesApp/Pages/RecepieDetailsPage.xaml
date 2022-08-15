@@ -11,10 +11,11 @@
 
             <Style x:Key="RecepieTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="28" />
-                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="RecepieDescription" TargetType="Label">
-                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="Gray" />
                 <Setter Property="WidthRequest" Value="350" />
@@ -22,12 +23,12 @@
                 <Setter Property="Margin" Value="0,10,0,10" />
                 <Setter Property="LineHeight" Value="1.5" />
             </Style>
-            
+
             <Style x:Key="RecepieRating" TargetType="Label">
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="Gray" />
             </Style>
-            
+
             <Style x:Key="RecepieImage" TargetType="Image">
                 <Setter Property="Margin" Value="150,-150,0,0" />
                 <Setter Property="WidthRequest" Value="350" />
@@ -40,12 +41,12 @@
             <Style x:Key="RecepieIngredientsTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="23" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontFamily" Value="AntipastoMedium" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        
+
         <AbsoluteLayout HorizontalOptions="Start">
             <Image Source="back.png" Style="{StaticResource BackBtn}">
                 <Image.GestureRecognizers>
@@ -76,6 +77,21 @@
                 <Label Text="{Binding Description}" Style="{StaticResource RecepieDescription}" ></Label>
                 <Rectangle Fill="gray" HeightRequest="2" WidthRequest="350" Opacity="0.1"></Rectangle>
                 <Label Text="Ingredients" Style="{StaticResource RecepieIngredientsTitle}"></Label>
+                <Grid HorizontalOptions="Center" RowDefinitions="Auto" Margin="0,5,0,0">
+                    <CollectionView ItemsSource="{Binding Ingredients}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+                                    <Ellipse Grid.Column="1" Fill="red" HeightRequest="10" WidthRequest="10" ></Ellipse>
+                                    <Label Grid.Column="2" Text="{Binding .}" FontAttributes="Bold" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

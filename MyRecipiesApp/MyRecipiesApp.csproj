@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>MyRecipiesApp</ApplicationTitle>
+		<ApplicationTitle>Homemade Food</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.myrecipiesapp</ApplicationId>
@@ -28,18 +28,21 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<PackageIcon></PackageIcon>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<Title>Homemade Food</Title>
+		<Product>Homemade Food</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\Images\logo_300.png" ForegroundFile="Resources\Images\logo_300.png" Color="#F7ECDE" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Images\logo_300.png" Color="#F7ECDE" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -65,6 +68,9 @@
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\burger.png" />
 	  <None Remove="Resources\Images\cinnamon_roll.png" />
+	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\logo_128.png" />
+	  <None Remove="Resources\Images\logo_300.png" />
 	  <None Remove="Resources\Images\mojito.png" />
 	  <None Remove="Resources\Images\orange_fire.png" />
 	  <None Remove="Resources\Images\pasta_gambas.png" />
