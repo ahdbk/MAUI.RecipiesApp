@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:MyRecipiesApp"             
              xmlns:model="clr-namespace:MyRecipiesApp.Models"             
              xmlns:controls="clr-namespace:MyRecipiesApp.Controls"             
-             x:DataType="model:Recepie"
+             xmlns:viewModels="clr-namespace:MyRecipiesApp.ViewModel"             
              x:Class="MyRecipiesApp.Pages.RecepiePage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -46,7 +46,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-
+        <Grid>
         <AbsoluteLayout HorizontalOptions="Start">
             <Image Source="back.png" Style="{StaticResource BackBtn}">
                 <Image.GestureRecognizers>
@@ -57,7 +57,14 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <Image Source="{Binding Image}" Style="{StaticResource RecepieImage}"/>
+            <Image Source="{Binding Image}" Style="{StaticResource RecepieImage}">
+                <Image.Shadow>
+                    <Shadow Brush="Black"
+                Offset="-10,10"
+                Radius="40"
+                Opacity="0.4" />
+                </Image.Shadow>
+            </Image>
 
             <StackLayout Orientation="Vertical" Padding="25,200,25,0" Spacing="12">
                 <Label Text="{Binding Title}" Style="{StaticResource RecepieTitle}"></Label>
@@ -93,6 +100,10 @@
                     </CollectionView>
                 </Grid>
             </StackLayout>
+
         </AbsoluteLayout>
+            <controls:ButtomDrawer></controls:ButtomDrawer>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

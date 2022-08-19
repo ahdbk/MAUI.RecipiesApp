@@ -36,10 +36,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\Images\logo_300.png" ForegroundFile="Resources\Images\logo_300.png" Color="#F7ECDE" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Images\logo_300.png" Color="#F7ECDE" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Images\logo_300.png" Color="#F7ECDE" ForegroundFile="Resources\Images\logo_300.png" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -87,6 +87,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\ButtomDrawer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\RecepieBadge.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
