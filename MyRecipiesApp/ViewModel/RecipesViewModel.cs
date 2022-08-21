@@ -8,16 +8,34 @@ namespace MyRecipiesApp.ViewModel
     {
         public ObservableCollection<Recepie> Recepies { get; set; } =
             new ObservableCollection<Recepie> { };
+
+        public ObservableCollection<RecipeCategory> Categories { get; set; } =
+            new ObservableCollection<RecipeCategory> { };
         public ObservableCollection<Recepie> PopularRecepies { get; set; } =
             new ObservableCollection<Recepie> { };
 
         public RecipesViewModel()
         {
             this.Recepies = new ObservableCollection<Recepie>(GetAllRecepies());
+            this.Categories = new ObservableCollection<RecipeCategory>(GetCategories());
             this.PopularRecepies = new ObservableCollection<Recepie>(
                 (GetAllRecepies().OrderByDescending(x => x.Rating))
             );
         }
+
+        void OnColorsRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            // Perform required operation
+        }
+
+        internal IEnumerable<RecipeCategory> GetCategories() => new List<RecipeCategory>()
+        {
+            new RecipeCategory{ Label = "All", Value = RecipeCategoryEnum.All},
+            new RecipeCategory{ Label = "Meal", Value = RecipeCategoryEnum.Meal},
+            new RecipeCategory{ Label = "Pizza", Value = RecipeCategoryEnum.Pizza},
+            new RecipeCategory{ Label = "Salad", Value = RecipeCategoryEnum.Salad},
+            new RecipeCategory{ Label = "Cocktail", Value = RecipeCategoryEnum.Cocktail}
+        };
 
         internal IEnumerable<Recepie> GetAllRecepies() => GetDummyData();
 
@@ -40,6 +58,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 6",
                         "ingredient 7"
                     },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
+                    },
                     Image = "rice_brokoly.png",
                     Color = ColorPalet.Blue,
                     Rating = 1.5
@@ -59,6 +89,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 5",
                         "ingredient 6",
                         "ingredient 7"
+                    },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
                     },
                     Image = "burger.png",
                     Color = ColorPalet.Peach,
@@ -80,6 +122,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 6",
                         "ingredient 7"
                     },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
+                    },
                     Image = "pizza.png",
                     Color = ColorPalet.Yellow,
                     Rating = 2.5
@@ -99,6 +153,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 5",
                         "ingredient 6",
                         "ingredient 7"
+                    },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
                     },
                     Image = "pasta_pesto.png",
                     Color = ColorPalet.Blue,
@@ -120,6 +186,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 6",
                         "ingredient 7"
                     },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
+                    },
                     Image = "pasta_gambas.png",
                     Color = ColorPalet.Beige,
                     Rating = 3.4
@@ -139,6 +217,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 5",
                         "ingredient 6",
                         "ingredient 7"
+                    },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
                     },
                     Image = "cinnamon_roll.png",
                     Color = ColorPalet.Peach,
@@ -160,6 +250,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 6",
                         "ingredient 7"
                     },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
+                    },
                     Image = "orange_fire.png",
                     Color = ColorPalet.Blue,
                     Rating = 3.7
@@ -180,6 +282,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 6",
                         "ingredient 7"
                     },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
+                    },
                     Image = "mojito.png",
                     Color = ColorPalet.Yellow,
                     Rating = 3.5
@@ -199,6 +313,18 @@ namespace MyRecipiesApp.ViewModel
                         "ingredient 5",
                         "ingredient 6",
                         "ingredient 7"
+                    },
+                     Directions = new Dictionary<string, string>()
+                    {
+                         {"1","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"2","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"3","adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"4","In hendrerit sapien felis, ut posuere nisi ultricies vel  ultricies vel" },
+                         {"5"," ultricies veltur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"6","In hendrerit sapien felis ur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"7","sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+                         {"8","Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hendrerit sapien felis, ut posuere nisi ultricies vel" },
+
                     },
                     Image = "strawberry.png",
                     Color = ColorPalet.Beige,

@@ -99,9 +99,6 @@
 	  <MauiXaml Update="Pages\RecepieDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Controls\CategorieMenu.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>

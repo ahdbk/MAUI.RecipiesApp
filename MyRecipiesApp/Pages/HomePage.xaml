@@ -26,6 +26,54 @@
                 <Setter Property="Margin" Value="25,10,10,20" />
             </Style>
         </ResourceDictionary>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="Red" />
+                                <Setter Property="Opacity" Value="1" />
+                                <Setter Property="FontAttributes" Value="Bold" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor"
+                                        Value="Gray" />
+                                <Setter Property="Opacity"
+                                        Value="0.5" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ThemeRadioTemplate">
+            <Grid RowDefinitions="Auto">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter TargetName="selected" Property="BackgroundColor" Value="#df6e57" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter TargetName="selected" Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <ContentPresenter x:Name="CP"  />
+                <Rectangle x:Name="selected" HeightRequest="2" BackgroundColor="Transparent" Margin="1, 20, 0, 0"></Rectangle>
+
+            </Grid>
+        </ControlTemplate>
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*">
@@ -38,7 +86,13 @@
                 </Grid>
 
                 <Grid RowDefinitions="Auto, *" Margin="30,0,0,0">
-                    <controls:CategorieMenu></controls:CategorieMenu>
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <RadioButton Value="-1" Content="All"  IsChecked="True" ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+                        <RadioButton Value="0" Content="Meal" ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+                        <RadioButton Value="1" Content="Salad"  ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+                        <RadioButton Value="2" Content="Cocktail" ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+                        <RadioButton Value="3" Content="Desert" ControlTemplate="{StaticResource ThemeRadioTemplate}"/>
+                    </StackLayout>
                 </Grid>
                 <Grid Margin="0,30,0,0">
                     <CarouselView ItemsSource="{ Binding Recepies}" 

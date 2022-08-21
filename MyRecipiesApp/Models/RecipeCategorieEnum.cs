@@ -4,7 +4,9 @@
     {
         Meal,
         Salad,
+        Pizza,
         Cocktail,
-        Desert
+        Desert,
+        All
     }
 }

@@ -4,7 +4,7 @@
     {
         public static class ColorPalet
         {
-            public static Color Peach { get; } = new Color(255, 179, 179);
+            public static Color Peach { get; } = new Color(214, 239, 237);
             public static Color Yellow { get; } = new Color(255, 219, 164);
             public static Color BlueDark { get; } = new Color(110, 133, 183);
             public static Color Blue { get; } = new Color(193, 239, 255);

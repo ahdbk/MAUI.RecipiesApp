@@ -1,17 +1,18 @@
+
 namespace MyRecipiesApp.Controls;
 
 public partial class ButtomDrawer: ContentView
 {
-    uint duration = 100;
-    double openY =  200;
-    double lastPanY = 0;
-    bool isBackdropTapEnabled = true;
+    private const double OPEN_POSITION = 170;
+    private const double CLOSE_POSITION = 630;
+    private const uint ANNIMATION_DURATION = 100;
     bool isToggled = false;
-    double width = DeviceDisplay.MainDisplayInfo.Width;
 
     public ButtomDrawer()
 	{
 		InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
+
     }
 
     protected async void OnTapped(object sender, EventArgs args)
@@ -26,39 +27,18 @@ public partial class ButtomDrawer: ContentView
 
         }
 
-    }
+    }   
 
-    protected async void Backdrop_Tapped(object sender, EventArgs args)
-	{
-        if (isBackdropTapEnabled)
-        {
-            await CloseDrawer();
-        }
-    }    
 	protected async void PanGestureRecognzer_PanUpdate(object sender, PanUpdatedEventArgs e)
 	{
-        if (e.StatusType == GestureStatus.Running)
+        if (!isToggled)
         {
-            isBackdropTapEnabled = false;
-            lastPanY = e.TotalY;
-            Console.WriteLine($"Running: {e.TotalY}");
-
-            Drawer.TranslationY = openY + e.TotalY;
+            await OpenDrawer();
 
         }
-        else if (e.StatusType == GestureStatus.Completed)
+        else
         {
-            ////Debug.WriteLine($"Completed: {e.TotalY}");
-            //if (lastPanY > -110)
-            //{
-            //   // await OpenDrawer();
-            //}
-            //else
-            //{
-            //    //await CloseDrawer();
-            //}
-            //isBackdropTapEnabled = true;
-            Console.WriteLine($"Completed: {e.TotalY}");
+            await CloseDrawer();
 
         }
 
@@ -66,24 +46,21 @@ public partial class ButtomDrawer: ContentView
 
     async Task OpenDrawer()
     {
+        Drawer.Margin = 0;
         await Task.WhenAll
         (
-            Backdrop.FadeTo(1, length: duration),
-            DrawerBody.FadeTo(1, length: duration),
-            Drawer.TranslateTo(0, 170, length: duration, easing: Easing.SinIn)
+            DrawerBody.FadeTo(1, length: ANNIMATION_DURATION),
+            Drawer.TranslateTo(0, OPEN_POSITION, length: ANNIMATION_DURATION, easing: Easing.SinIn)
         );
         isToggled = true;
-        Backdrop.InputTransparent = false;
     }
     async Task CloseDrawer()
     {
         await Task.WhenAll
    (
-       Backdrop.FadeTo(0, length: duration),
-       DrawerBody.FadeTo(0, length: duration),
-       Drawer.TranslateTo(0, 630, length: duration, easing: Easing.SinIn)
+       DrawerBody.FadeTo(0, length: ANNIMATION_DURATION),
+       Drawer.TranslateTo(0, CLOSE_POSITION, length: ANNIMATION_DURATION, easing: Easing.SinIn)
    );
-        Backdrop.InputTransparent = true;
         isToggled = false;
 
     }
