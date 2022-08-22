@@ -6,7 +6,6 @@
         Salad,
         Pizza,
         Cocktail,
-        Desert,
-        All
+        Desert
     }
 }

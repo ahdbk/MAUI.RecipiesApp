@@ -10,6 +10,7 @@ namespace MyRecipiesApp.Pages
     {
         public ObservableCollection<string> toto { get; set; } = new ObservableCollection<string> { };
 
+        public bool IsCocktail { get; set; }
         public RecepiePage()
         {
             InitializeComponent();
@@ -17,6 +18,7 @@ namespace MyRecipiesApp.Pages
             Application.Current.UserAppTheme = AppTheme.Light;
 
             this.BindingContext = this;
+            //this.IsCocktail = ((Recepie)this.BindingContext).Category == RecipeCategoryEnum.Cocktail;
         }
 
         public async void OnTappedGoBack(object sender, EventArgs args)

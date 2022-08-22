@@ -21,16 +21,13 @@
             </Frame.Shadow>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTapped"/>
-                <!--<PanGestureRecognizer PanUpdated="PanGestureRecognzer_PanUpdate"/>-->
             </Frame.GestureRecognizers>
             <StackLayout Orientation="Vertical" Padding="0,4">
-
                 <BoxView CornerRadius="2" HeightRequest="4" WidthRequest="40"
                          BackgroundColor="LightGray"
                          HorizontalOptions="Center">
                     <BoxView.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnTapped"/>
-                        <!--<PanGestureRecognizer PanUpdated="PanGestureRecognzer_PanUpdate"/>-->
                     </BoxView.GestureRecognizers>
                 </BoxView>
                 <Label Text="Directions"
@@ -40,7 +37,6 @@
                        FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnTapped"/>
-                        <!--<PanGestureRecognizer PanUpdated="PanGestureRecognzer_PanUpdate"/>-->
                     </Label.GestureRecognizers>
                 </Label>
                 <CollectionView   
@@ -67,12 +63,11 @@
                                 </StackLayout>
                                 <Rectangle Fill="Gray" Opacity="0.5" HeightRequest="2" ></Rectangle>
                             </StackLayout>
-               
+
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
         </Frame>
     </AbsoluteLayout>
-
 </ContentView>

@@ -32,7 +32,14 @@
             <Style x:Key="RecepieImage" TargetType="Image">
                 <Setter Property="Margin" Value="150,-150,0,0" />
                 <Setter Property="WidthRequest" Value="350" />
+                <Style.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding IsCocktail}" Value="True">
+                        <Setter Property="Margin" Value="155,30,0,0" />
+                <Setter Property="WidthRequest" Value="230" />
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
+            
             <Style x:Key="BackBtn" TargetType="Image">
                 <Setter Property="Margin" Value="20" />
                 <Setter Property="WidthRequest" Value="30" />
@@ -84,14 +91,14 @@
                 <Label Text="{Binding Description}" Style="{StaticResource RecepieDescription}" ></Label>
                 <Rectangle Fill="gray" HeightRequest="2" WidthRequest="350" Opacity="0.1"></Rectangle>
                 <Label Text="Ingredients" Style="{StaticResource RecepieIngredientsTitle}"></Label>
-                <Grid HorizontalOptions="Center" RowDefinitions="Auto" Margin="0,5,0,0">
+                <Grid HorizontalOptions="Center" RowDefinitions="Auto" Margin="0,0,0,0">
                     <CollectionView ItemsSource="{Binding Ingredients}">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" Span="2" />
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+                                <StackLayout Orientation="Horizontal" Spacing="10" Padding="0,10,0,10">
                                     <Ellipse Grid.Column="1" Fill="red" HeightRequest="10" WidthRequest="10" ></Ellipse>
                                     <Label Grid.Column="2" Text="{Binding .}" FontAttributes="Bold" />
                                 </StackLayout>
