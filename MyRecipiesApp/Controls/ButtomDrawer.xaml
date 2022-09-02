@@ -34,6 +34,7 @@
                        HorizontalOptions="Center"
                        FontSize="20"
                        Margin="10"
+                       TextColor="Black"
                        FontAttributes="Bold">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnTapped"/>
@@ -50,18 +51,19 @@
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                     <Label Text="{Binding Key}"
-                                           TextColor="Black"
+                                           TextColor="White"
                                            Margin="10"
                                            FontSize="50"
                                            Opacity="0.5"
                                            FontFamily="MetropolisMedium"/>
                                     <Label Text="{Binding Value}"
-                                           TextColor="Black"
+                                           TextColor="White"
                                            VerticalOptions="Center"
                                            Margin="10"
-                                           MaximumWidthRequest="220" FontFamily="MetropolisMedium"/>
+                                           MaximumWidthRequest="225"
+                                           FontFamily="MetropolisMedium"/>
                                 </StackLayout>
-                                <Rectangle Fill="Gray" Opacity="0.5" HeightRequest="2" ></Rectangle>
+                                <Rectangle Fill="White" Opacity="0.5" HeightRequest="2" ></Rectangle>
                             </StackLayout>
 
                         </DataTemplate>

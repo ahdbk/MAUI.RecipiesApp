@@ -13,15 +13,15 @@
     <ContentView.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
-                <Setter Property="FontFamily" Value="Metropolis Medium" />
-                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="FontFamily" Value="MetropolisMedium" />
 
 
             </Style>
             <Style x:Key="SubTitleStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="13" />
-                <Setter Property="TextColor" Value="Grey" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontFamily" Value="Metropolis Bold" />
 
             </Style>
@@ -51,7 +51,10 @@
         <Grid RowDefinitions="Auto" Margin="20,100,0,0" HorizontalOptions="Start">
             <StackLayout Orientation="Vertical">
                 <Label Style="{StaticResource TitleStyle}" Text="{Binding Title}"></Label>
-                <Label Style="{StaticResource SubTitleStyle}" Text="{Binding SubTitle}"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="clock.png" HeightRequest="10" Margin="0,0,5,1" Opacity="0.5"></Image>
+                    <Label Style="{StaticResource SubTitleStyle}" Text="{Binding PrepTime}"></Label>
+                </StackLayout>
             </StackLayout>
         </Grid>
     </Grid>

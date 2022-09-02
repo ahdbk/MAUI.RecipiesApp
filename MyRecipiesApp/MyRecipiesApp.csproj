@@ -36,10 +36,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\icon_128.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Images\logo_300.png" Color="#F7ECDE" ForegroundFile="Resources\Images\logo_300.png" />
+		<MauiSplashScreen Include="Resources\Images\icon_300.svg" Color="#F7ECDE" ForegroundFile="Resources\Images\icon_300.svg" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -49,6 +49,12 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\icon_128.svg" />
+	  <MauiImage Remove="Resources\Images\icon_300.svg" />
+	  <MauiImage Remove="Resources\Images\logo_128.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,6 +74,9 @@
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\burger.png" />
 	  <None Remove="Resources\Images\cinnamon_roll.png" />
+	  <None Remove="Resources\Images\clock.png" />
+	  <None Remove="Resources\Images\icon_128.svg" />
+	  <None Remove="Resources\Images\icon_300.svg" />
 	  <None Remove="Resources\Images\logo.png" />
 	  <None Remove="Resources\Images\logo_128.png" />
 	  <None Remove="Resources\Images\logo_300.png" />
@@ -103,6 +112,11 @@
 
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiIcon Include="Resources\AppIcon\icon_128.svg" />
+	  <MauiIcon Include="Resources\Images\logo_128.png" />
 	</ItemGroup>
 
 </Project>
