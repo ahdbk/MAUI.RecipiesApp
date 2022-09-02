@@ -1,8 +1,13 @@
 # Homemade Food
 
-This app is inspired by this design
+Mobile app developed on MAUI framework 
 
-https://dribbble.com/shots/8864088-Homemade-Food-Delivery-App/attachments
+This app includes:
+
+- Crads
+- Navigation
+- Buttom menu
+- filters
 
 ## Preview 
 
@@ -17,3 +22,8 @@ https://dribbble.com/shots/8864088-Homemade-Food-Delivery-App/attachments
 
    - <h3>Screenshots</h3>
       <img alt="Homemade" title="Homemade" src="https://raw.githubusercontent.com/ahdbk/MAUI.RecipiesApp/master/screenshots/01.gif" width="24%"/>
+
+
+This app is inspired by this design
+
+https://dribbble.com/shots/8864088-Homemade-Food-Delivery-App/attachments
