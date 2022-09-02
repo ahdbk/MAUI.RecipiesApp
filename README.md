@@ -1,4 +1,4 @@
-# Homemade Food
+# Homemade Food App
 
 Mobile app developed on MAUI framework 
 
