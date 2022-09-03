@@ -14,9 +14,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v2.1.0
       with:
         dotnet-version: 6.0.300
+    - name: dotnet workload install android
+      run: dotnet workload install android
+    - name: dotnet workload install maui-android
+      run: dotnet workload install maui-android
+    - name: dotnet workload install maccatalyst
+      run: dotnet workload install maccatalyst
+      
+      
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
