@@ -36,10 +36,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\icon_128.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#FFEB3B" ForegroundFile="Resources\AppIcon\forg.svg" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Images\icon_300.svg" Color="#F7ECDE" ForegroundFile="Resources\Images\icon_300.svg" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFEB3B" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -58,6 +58,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\AppIcon\appicon.svg" />
+	  <None Remove="Resources\AppIcon\forg.svg" />
 	  <None Remove="Resources\Fonts\antipasto.demibold.ttf" />
 	  <None Remove="Resources\Fonts\antipasto.medium.ttf" />
 	  <None Remove="Resources\Fonts\antipasto.regular.ttf" />
@@ -112,11 +114,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Services\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiIcon Include="Resources\AppIcon\icon_128.svg" />
-	  <MauiIcon Include="Resources\Images\logo_128.png" />
 	</ItemGroup>
 
 </Project>
